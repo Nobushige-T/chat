@@ -5,8 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Chat</title>
+  <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-
+  <h1>
+    <p>Chat Room</p>
+  </h1>
+  <div class="message">
+    <p>ここにメッセージを追加してください。</p>
+    <form name="js">
+    <input type="text" name = "enter" value ="chat" size = "70"></input>
+    <input type= "button" onclick="send();" value="送信"></input>
+  </form>
+  <input id="txt" type="text">
+  </div>
+  <script>
+  function send(){
+  var textinput = document.js.enter.value;
+  var socket = io.connect();
+  socket.emit('message',{value: textinput}); //チャットの場合はvalueの中身を入力されたものに変える
+  socket.on('from_server', function(data){
+  var elm = document.getElementById("txt"); //サーバーに送ったものが返ってくる
+  elm.value = data.value;
+  });
+}
+  </script>
 </body>
 </html>
