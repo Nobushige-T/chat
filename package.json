@@ -1,0 +1,19 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "chat app @spring2017",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nobushige-T/chat.git"
+  },
+  "author": "Nobushige-T",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nobushige-T/chat/issues"
+  },
+  "homepage": "https://github.com/Nobushige-T/chat#readme"
+}
